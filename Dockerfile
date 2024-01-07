@@ -5,7 +5,7 @@ FROM apache/superset:latest
 RUN pip install psycopg2-binary
 
 # Expose the Superset web port
-EXPOSE 8088
+EXPOSE 8000
 
 # Start Superset
-CMD ["superset", "run", "-p", "8088", "--with-threads", "--reload", "--no-debugger"]
+CMD ["superset", "run", "-p", "8000", "--with-threads", "--reload", "--no-debugger"]

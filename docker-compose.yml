@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - "8080:8088"
+      - "8000:8000"
     env_file: .env  
     command: ["superset", "run", "-p", "8088", "--with-threads", "--reload", "--no-debugger"]
     restart: always
