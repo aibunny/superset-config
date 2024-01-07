@@ -6,7 +6,7 @@ load_dotenv()
 # Superset specific config
 ROW_LIMIT = 5000
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SUPERSET_SECRET_KEY= os.getenv("SUPERSET_SECRET_KEY")
 
 SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
 
