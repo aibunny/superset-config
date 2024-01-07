@@ -6,8 +6,6 @@ USER root
 # Install PostgreSQL driver
 RUN pip install psycopg2-binary
 RUN pip install python-dotenv
-RUN pip install --no-cache -r /app/requirements.txt
-ENV REQUIREMENTS_LOCAL=/app/requirements.txt
 
 COPY . /app/
 ENV SUPERSET_CONFIG_PATH /app/superset_config.py
