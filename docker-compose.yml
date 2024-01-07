@@ -11,7 +11,7 @@ services:
     restart: always
 
   init_superset:
-    image: superset:latest
+    image: apache/superset:latest
     depends_on:
       - superset
     env_file:
