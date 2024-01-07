@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  superset:
+    build:
+      context: .
+    ports:
+      - "8080:8088"
+    env_file: .env  
+    command: ["superset", "run", "-p", "8088", "--with-threads", "--reload", "--no-debugger"]
+    restart: always
+
+  init_superset:
+  image: superset:latest
+  depends_on:
+    - superset
+  env_file:
+    - .env
+  command: >
+    bash -c "superset fab create-admin --username $ADMIN_USERNAME --firstname $ADMIN_FIRSTNAME --lastname $ADMIN_LASTNAME --email $ADMIN_EMAIL --password $ADMIN_PASSWORD &&
+             superset db upgrade &&
+             superset load_examples &&
+             superset init"
