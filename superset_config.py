@@ -80,3 +80,9 @@ TALISMAN_CONFIG = {
        
     },
 }
+
+# Enable serving of static files by the Superset app
+ENABLE_PROXY_FIX = True
+
+# Specify the directory where static files should be collected
+STATIC_ROOT = "/app/superset/static/"
